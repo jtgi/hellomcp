@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "description": "hello mcp",
   "bin": {
-    "hellomcp": "./build/index.js"
+    "hellomcp-server": "./build/server.js",
+    "hellomcp-client": "./build/client.js"
   },
   "type": "module",
   "scripts": {
-    "build": "tsc && chmod 755 ./build/index.js",
+    "build": "tsc && chmod 755 ./build/server.js && chmod 755 ./build/client.js",
+    "start:server": "node build/server.js",
+    "start:client": "node build/client.js",
+    "dev:server": "concurrently -n \"build,server\" -c \"blue,green\" \"nodemon --watch src --ext ts --exec 'npm run build'\" \"node build/server.js\"",
+    "dev:client": "nodemon --watch build/client.js --no-stdin --exec 'clear && node build/client.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
@@ -17,11 +22,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.52.0",
     "@modelcontextprotocol/sdk": "^1.12.1",
+    "chalk": "^5.4.1",
+    "dotenv": "^16.5.0",
+    "ora": "^8.2.0",
     "zod": "^3.25.42"
   },
   "devDependencies": {
     "@types/node": "^22.15.29",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.10",
     "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=23.0.0"
   }
 }

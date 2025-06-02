@@ -34,7 +34,7 @@ export async function getNotes(page: number = 1, pageSize: number = 50): Promise
   `;
 
   try {
-    const { stdout } = await execAsync(`osascript -e '${script}'`);
+    const { stdout } = await execAsync(`osascript -e '${script}'`, { maxBuffer: 50 * 1024 * 1024 });
     const notes = stdout
       .split("\n")
       .filter(Boolean)
