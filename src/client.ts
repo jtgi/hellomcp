@@ -6,7 +6,7 @@ import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js"
 import dotenv from "dotenv";
 import chalk from "chalk";
 import ora from "ora";
-
+import { aopic } from "./lib/anthropic.js";
 dotenv.config();
 
 const SYSTEM_PROMPT = `You are a good friend with a bit of extra time willing to answer some questions and help with tasks.
@@ -45,7 +45,6 @@ remember:
 const MODEL = "claude-3-7-sonnet-latest";
 const MAX_TOKENS = 1000;
 
-const aopic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 const mcp = new Client({ name: "hellomcp-client", version: "1.0.0" });
 const transport = new StdioClientTransport({ command: "node", args: ["build/server.js"] });
 

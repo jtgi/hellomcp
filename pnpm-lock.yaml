@@ -11,6 +11,9 @@ importers:
       '@anthropic-ai/sdk':
         specifier: ^0.52.0
         version: 0.52.0
+      '@hono/node-server':
+        specifier: ^1.14.3
+        version: 1.14.3(hono@4.7.11)
       '@modelcontextprotocol/sdk':
         specifier: ^1.12.1
         version: 1.12.1
@@ -20,6 +23,9 @@ importers:
       dotenv:
         specifier: ^16.5.0
         version: 16.5.0
+      hono:
+        specifier: ^4.7.11
+        version: 4.7.11
       ora:
         specifier: ^8.2.0
         version: 8.2.0
@@ -49,6 +55,12 @@ packages:
   '@babel/runtime@7.27.4':
     resolution: {integrity: sha512-t3yaEOuGu9NlIZ+hIeGbBjFtZT7j2cb2tg0fuaJKeGotchRjjLfrBA9Kwf8quhpP1EUuxModQg04q/mBwyg8uA==}
     engines: {node: '>=6.9.0'}
+
+  '@hono/node-server@1.14.3':
+    resolution: {integrity: sha512-KuDMwwghtFYSmIpr4WrKs1VpelTrptvJ+6x6mbUcZnFcc213cumTF5BdqfHyW93B19TNI4Vaev14vOI2a0Ie3w==}
+    engines: {node: '>=18.14.1'}
+    peerDependencies:
+      hono: ^4
 
   '@modelcontextprotocol/sdk@1.12.1':
     resolution: {integrity: sha512-KG1CZhZfWg+u8pxeM/mByJDScJSrjjxLc8fwQqbsS8xCjBmQfMNEBTotYdNanKekepnfRI85GtgQlctLFpcYPw==}
@@ -321,6 +333,10 @@ packages:
   hasown@2.0.2:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
+
+  hono@4.7.11:
+    resolution: {integrity: sha512-rv0JMwC0KALbbmwJDEnxvQCeJh+xbS3KEWW5PC9cMJ08Ur9xgatI0HmtgYZfOdOSOeYsp5LO2cOhdI8cLEbDEQ==}
+    engines: {node: '>=16.9.0'}
 
   http-errors@2.0.0:
     resolution: {integrity: sha512-FtwrG/euBzaEjYeRqOgly7G0qviiXoJWnvEH2Z1plBdXgbyjv34pHTSb9zoeHMyDy33+DWy5Wt9Wo+TURtOYSQ==}
@@ -696,6 +712,10 @@ snapshots:
 
   '@babel/runtime@7.27.4': {}
 
+  '@hono/node-server@1.14.3(hono@4.7.11)':
+    dependencies:
+      hono: 4.7.11
+
   '@modelcontextprotocol/sdk@1.12.1':
     dependencies:
       ajv: 6.12.6
@@ -1001,6 +1021,8 @@ snapshots:
   hasown@2.0.2:
     dependencies:
       function-bind: 1.1.2
+
+  hono@4.7.11: {}
 
   http-errors@2.0.0:
     dependencies:

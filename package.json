@@ -11,6 +11,7 @@
     "build": "tsc && chmod 755 ./build/server.js && chmod 755 ./build/client.js",
     "start:server": "node build/server.js",
     "start:client": "node build/client.js",
+    "start:sse": "tsx src/sse.ts",
     "dev:server": "concurrently -n \"build,server\" -c \"blue,green\" \"nodemon --watch src --ext ts --exec 'npm run build'\" \"node build/server.js\"",
     "dev:client": "nodemon --watch build/client.js --no-stdin --exec 'clear && node build/client.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,9 +24,11 @@
   "license": "ISC",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",
+    "@hono/node-server": "^1.14.3",
     "@modelcontextprotocol/sdk": "^1.12.1",
     "chalk": "^5.4.1",
     "dotenv": "^16.5.0",
+    "hono": "^4.7.11",
     "ora": "^8.2.0",
     "zod": "^3.25.42"
   },
