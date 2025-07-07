@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/jtgi-hellomcp-badge.png)](https://mseep.ai/app/jtgi-hellomcp)
+
 # hellomcp
 
 a repo for experimenting with mcp
